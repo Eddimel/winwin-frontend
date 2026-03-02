@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "../config";
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
@@ -11,7 +12,7 @@ function Login() {
   const requestOtp = async () => {
     setMessage("")
     try {
-      const res = await fetch("http://localhost:4000/auth/request-otp", {
+      const res = await fetch(`${API_BASE_URL}/auth/request-otp`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -35,7 +36,7 @@ function Login() {
   const verifyOtp = async () => {
     setMessage("")
     try {
-      const res = await fetch("http://localhost:4000/auth/verify-otp", {
+      const res = await fetch(`${API_BASE_URL}/auth/verify-otp`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "../config";
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
@@ -9,7 +10,7 @@ function Catalogue() {
   useEffect(() => {
     const fetchCatalogue = async () => {
       try {
-        const res = await fetch("http://localhost:4000/api/catalogue", {
+        const res = await fetch(`${API_BASE_URL}/api/catalogue`, {
           credentials: "include"
         })
 
