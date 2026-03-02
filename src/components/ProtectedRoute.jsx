@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "../config";
 import { useEffect, useState } from "react"
 import { Navigate } from "react-router-dom"
 
@@ -8,7 +9,7 @@ function ProtectedRoute({ children }) {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const res = await fetch("http://localhost:4000/api/me", {
+        const res = await fetch(`${API_BASE_URL}/api/me`, {
           credentials: "include"
         })
 
